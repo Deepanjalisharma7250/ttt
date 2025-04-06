@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=ManageQuestionss
+comment1.params=
+comment1.target=ManageQuestionss()
+comment2.params=actionType
+comment2.target=ManageQuestionss(java.lang.String)
+comment3.params=action\ question
+comment3.target=void\ handleDatabaseAction(java.lang.String,\ java.lang.String)
+comment4.params=text
+comment4.target=javax.swing.JButton\ createStyledButton(java.lang.String)
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+numComments=6

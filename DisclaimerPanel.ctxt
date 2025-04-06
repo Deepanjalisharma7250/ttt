@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=DisclaimerPanel
+comment1.params=domain\ quizApp
+comment1.target=DisclaimerPanel(java.lang.String,\ QuizApp)
+comment2.params=button
+comment2.target=void\ styleButton(javax.swing.JButton)
+numComments=3

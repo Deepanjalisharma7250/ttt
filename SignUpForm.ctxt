@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=SignUpForm
+comment1.params=
+comment1.target=SignUpForm()
+comment2.params=e
+comment2.target=void\ performSignUp(java.awt.event.ActionEvent)
+numComments=3

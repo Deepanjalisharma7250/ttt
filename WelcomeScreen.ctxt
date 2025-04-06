@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=WelcomeScreen
+comment1.params=
+comment1.target=WelcomeScreen()
+comment2.params=g
+comment2.target=void\ paintComponent(java.awt.Graphics)
+comment3.params=g
+comment3.target=void\ paintComponent(java.awt.Graphics)
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5

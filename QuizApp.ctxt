@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=QuizApp
+comment1.params=userId\ domain
+comment1.target=QuizApp(int,\ java.lang.String)
+comment10.params=isCorrect
+comment10.target=void\ updateAnswerStats(boolean)
+comment11.params=
+comment11.target=java.lang.String\ getSelectedOption()
+comment12.params=
+comment12.target=void\ submitQuiz()
+comment2.params=
+comment2.target=void\ startQuiz()
+comment3.params=
+comment3.target=void\ startTimer()
+comment4.params=e
+comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment5.params=
+comment5.target=boolean\ loadQuestions()
+comment6.params=
+comment6.target=void\ displayQuestion()
+comment7.params=
+comment7.target=void\ nextQuestion()
+comment8.params=userId
+comment8.target=java.lang.String\ getUsername(int)
+comment9.params=
+comment9.target=void\ checkAnswer()
+numComments=13
