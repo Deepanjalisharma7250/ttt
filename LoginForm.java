@@ -1,10 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.awt.event.*;
+import java.sql.*;
 
 public class LoginForm extends JFrame {
     private JTextField usernameField;
@@ -19,9 +16,8 @@ public class LoginForm extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Center window
 
-        // Set Background Color
         JPanel panel = new JPanel();
-        panel.setBackground(new Color(255, 182, 193)); // Light pink background
+        panel.setBackground(new Color(255, 182, 193)); // Light pink
         panel.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(10, 10, 10, 10);
@@ -43,14 +39,12 @@ public class LoginForm extends JFrame {
         roleGroup.add(userButton);
         roleGroup.add(adminButton);
 
-        // Buttons
         loginButton = new JButton("Login");
         registerButton = new JButton("Register");
         cancelButton = new JButton("Cancel");
         helpButton = new JButton("Help");
-        backButton = new JButton("Back"); // New Back Button
+        backButton = new JButton("Back");
 
-        // Add components
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.gridwidth = 2;
@@ -86,15 +80,30 @@ public class LoginForm extends JFrame {
         JPanel extraButtonPanel = new JPanel(new FlowLayout());
         extraButtonPanel.add(cancelButton);
         extraButtonPanel.add(helpButton);
-        extraButtonPanel.add(backButton); // Added Back Button
+        extraButtonPanel.add(backButton);
         panel.add(extraButtonPanel, gbc);
+
+        // ✅ Forgot Password label
+        JLabel forgotLabel = new JLabel("<HTML><U>Forgot Password?</U></HTML>");
+        forgotLabel.setForeground(Color.BLUE);
+        forgotLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        forgotLabel.setFont(new Font("Arial", Font.PLAIN, 12));
+        forgotLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                new ForgotPassword(); // open forgot password window
+            }
+        });
+
+        gbc.gridy++;
+        panel.add(forgotLabel, gbc); // Add below buttons
 
         // Button Actions
         loginButton.addActionListener(e -> login());
         registerButton.addActionListener(e -> new RegisterForm());
         cancelButton.addActionListener(e -> System.exit(0));
         helpButton.addActionListener(e -> showHelp());
-        backButton.addActionListener(e -> goBackToWelcome()); // Back button action
+        backButton.addActionListener(e -> goBackToWelcome());
 
         add(panel);
         setVisible(true);
@@ -130,7 +139,7 @@ public class LoginForm extends JFrame {
                     }
                 } else {
                     JOptionPane.showMessageDialog(this, "User Login Successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
-                    new UserDashboard(userId,username);
+                    new UserDashboard(userId, username);
                     dispose();
                 }
             } else {
@@ -150,7 +159,7 @@ public class LoginForm extends JFrame {
                 + "- Click 'Login' to proceed.\n"
                 + "- Click 'Register' to create a new account.\n"
                 + "- Click 'Cancel' to exit.\n"
-                + "- If you forgot your password, contact the administrator.\n\n"
+                + "- Forgot password? Click the link below.\n\n"
                 + "Common Issues:\n"
                 + "1. Make sure Caps Lock is off.\n"
                 + "2. Use correct credentials.\n"
@@ -160,8 +169,8 @@ public class LoginForm extends JFrame {
     }
 
     private void goBackToWelcome() {
-        new WelcomeScreen(); // Replace with your actual Welcome Screen class
-        dispose(); // Close the current login form
+        new WelcomeScreen(); // Replace with your welcome screen
+        dispose();
     }
 
     public static void main(String[] args) {
